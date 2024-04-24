@@ -33,7 +33,7 @@
     });
 
     await import('nostr-zap')
-    let url: string | undefined = VITE_URL;
+    let url: string | undefined = import.meta.env.VITE_URL;
     if(window.location.host.includes('localhost') || window.location.host.includes('myrelay.page') || window.location.host.includes('netlify')){
       const params = new URLSearchParams(window.location.search);
       url = params.get('url') || "wss://lunchbox.sandwich.farm"
